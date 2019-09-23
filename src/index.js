@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import LoadingDisplay from './LoadingDisplay';
 import SeasonDisplay from './SeasonDisplay';
 
 
@@ -11,11 +12,11 @@ class App extends React.Component {
       position => this.setState({ lat: position.coords.latitude, long: position.coords.longitude }),
       err => this.setState({ errorMessage: err.message })
     );
-    console.log('My component was rendered to the screen');
+    // console.log('My component was rendered to the screen');
   }
 
   componentDidUpdate() {
-    console.log('My component was just updated - it rerendered!');
+    // console.log('My component was just updated - it rerendered!');
   }
 
   render() {
@@ -24,10 +25,10 @@ class App extends React.Component {
     } 
 
     if(!this.state.errorMessage && this.state.lat) {
-      return <div><div>Latitude: {this.state.lat}</div><div> Longitude: {this.state.long}</div></div>
+      return <SeasonDisplay lat={this.state.lat}/>
     }
 
-    return <div>Loading!</div>
+    return <div><LoadingDisplay /></div>
   }
 }
 ReactDOM.render( 
