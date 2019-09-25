@@ -1,12 +1,13 @@
 import React from 'react';
 import Loader from 'react-loader-spinner';
-import './LoadingDisplay.css';
+import './SeasonIcons.css';
 
 const LoadingDisplay = props => {
   return (
-    <Loader type='Hearts' color='pink' height={80} width={80} timeout={3000} />
+    <div className='loading-display'>
+      <Loader type='BallTriangle' color='darkGrey' height={150} width={150} timeout={5000} />
+    </div>
   )
 }
-
 
 export default LoadingDisplay;

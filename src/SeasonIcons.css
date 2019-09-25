@@ -1,25 +1,41 @@
 .icon-left {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  
+  top: 2rem;
+  left: 2rem;
+  transition: all .2s ease-in-out;
 }
+
+#icon-left {
+  animation: rotation 10000ms infinite linear;
+}
+
+.icon-left:hover {
+  transform: scale(1.5);
+}
+
+.icon-right {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  transition: all .2s ease-in-out; 
+}
+
+#icon-right {
+  animation: rotation 10000ms infinite linear;
+}
+
+.icon-right:hover {
+  --webkit-transform: scale(1.7);
+  --ms-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
 @keyframes rotation {
   from {
     transform: rotate(0deg);
   } to {
     transform: rotate(360deg);
   }
-}
-
-.icon-left i {
-  animation: rotation 2000ms infinite linear;
-}
-
-.icon-right {
-  position: absolute;
-  bottom: 10px;
-  right: 70px;
 }
 
 .season-display {
@@ -29,6 +45,17 @@
   height: 100vh;
 }
 
+.season-display.winter i {
+  color: lightskyblue;
+}
+
+.season-display.summer i {
+  color: yellow;
+}
+.text:hover {
+  transition: transform .2s ease;
+}
+
 .winter {
   background-color: aliceblue;
 }
@@ -36,4 +63,11 @@
 .summer {
   background-color: orange;
 
+}
+
+.loading-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
