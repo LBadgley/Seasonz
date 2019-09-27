@@ -3,14 +3,16 @@ import './SeasonIcons.css';
 
 const seasonConfig = {
   summer: {
-    text: 'Sunshine, Let\'s hit the beach!',
+    text: 'Sunshine, let\'s head to the coast!',
     img: 'sun outline'
   },
   winter: {
-    text: 'Brr, Let\'s the snow!',
+    text: 'Brr, let\'s hit up Mt. Hood!',
     img: 'snowflake outline'
   }
 };
+
+//helper function getting the season
 
 const getSeason = (lat, month) => {
   if (month > 2 && month < 9) {

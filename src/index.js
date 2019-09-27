@@ -9,7 +9,7 @@ class App extends React.Component {
 
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
-      position => this.setState({ lat: position.coords.latitude, long: position.coords.longitude }),
+      position => this.setState({ lat: position.coords.latitude }),
       err => this.setState({ errorMessage: err.message })
     );
     // console.log('My component was rendered to the screen');
@@ -19,7 +19,7 @@ class App extends React.Component {
     // console.log('My component was just updated - it rerendered!');
   }
 
-  render() {
+  renderContent() {
     if(this.state.errorMessage && !this.state.lat) {
       return <div>{this.state.errorMessage}</div>
     } 
@@ -28,7 +28,15 @@ class App extends React.Component {
       return <SeasonDisplay lat={this.state.lat}/>
     }
 
-    return <div><LoadingDisplay /></div>
+    return <div><LoadingDisplay message="Please accept our location request!" /></div>
+  }
+
+  render() {
+    return(
+      <div className="border red">
+        {this.renderContent()}
+      </div>
+    );
   }
 }
 ReactDOM.render( 
