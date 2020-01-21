@@ -30,10 +30,12 @@ const SeasonDisplay = props => {
   console.log(season);
 
   return (
-    <div className={`season-display ${season}`}>
-      <i id='icon-left' className={`icon-left massive ${img} icon`}/>
-      <h1 id='text'>{text}</h1>
-      <i id='icon-right' className={`icon-right massive ${img} icon`} />
+    <div>
+      <div className={`season-display ${season}`}>
+        <i id='icon-left' className={`icon-left massive ${img} icon`}/>
+        <h1 id='text'>{text}</h1>
+        <i id='icon-right' className={`icon-right massive ${img} icon`} />
+      </div>
     </div>
   )  
 };
