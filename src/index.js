@@ -23,11 +23,9 @@ class App extends React.Component {
     if(this.state.errorMessage && !this.state.lat) {
       return <div>{this.state.errorMessage}</div>
     } 
-
     if(!this.state.errorMessage && this.state.lat) {
       return <SeasonDisplay lat={this.state.lat}/>
     }
-
     return <div><LoadingDisplay message="Please accept our location request!" /></div>
   }
 
